@@ -2,17 +2,14 @@ import { Placemark } from "@pbe/react-yandex-maps"
 
 
 export type AppPlacemarkProps = {
-    id: number,
     coordinates: number[],
     balloonText: string
 }
 
 export const AppPlacemark = (props: AppPlacemarkProps) => {
-    const {id ,coordinates, balloonText} = props; 
+    const {coordinates, balloonText} = props; 
     return (
         <Placemark 
-            id = {id}
-
             geometry={
                 coordinates
             }

@@ -29,15 +29,15 @@ const AppMap = (props: AppMapProps) => {
         <YMaps>
           <Map width="1000px" height="500px" state={mapState}>
             {points.map((it,id)=>
+            <div key={id}>
               <AppPlacemark 
-                id = {id}
                 coordinates={
                   it.coordinates
                 }
                 balloonText={
                   it.title
                 }
-              />)}
+              /></div>)}
           </Map>
         </YMaps>
         {/* <button onClick={() => onItemPush()}>Push</button> */}
