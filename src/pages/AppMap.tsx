@@ -40,8 +40,6 @@ const AppMap = (props: AppMapProps) => {
               /></div>)}
           </Map>
         </YMaps>
-        {/* <button onClick={() => onItemPush()}>Push</button> */}
-        {/* <button onClick={() => onItemDelete()}>Delete</button> */}
       </>
     );
   };

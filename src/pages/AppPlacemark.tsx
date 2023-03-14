@@ -6,7 +6,7 @@ export type AppPlacemarkProps = {
     balloonText: string
 }
 
-export const AppPlacemark = (props: AppPlacemarkProps) => {
+export default function AppPlacemark(props: AppPlacemarkProps){
     const {coordinates, balloonText} = props; 
     return (
         <Placemark 
