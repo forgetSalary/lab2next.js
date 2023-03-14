@@ -1,4 +1,4 @@
-import AppMap, { MapPoint } from './AppMap'
+import AppMap, { MapPoint } from '../components/AppMap'
 import React from 'react'
 
 import styles from '@/styles/Home.module.css'

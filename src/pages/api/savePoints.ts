@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 import fs from 'fs'
-import { MapPoint } from '../AppMap';
+import { MapPoint } from '../../components/AppMap';
 
 export const config = {
     api: {

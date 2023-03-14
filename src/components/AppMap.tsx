@@ -1,8 +1,8 @@
 
 //import './AppMap.css'
-import React, { useState } from "react";
-import { YMaps, Map, ObjectManager, Placemark } from "@pbe/react-yandex-maps";
-import { AppPlacemark } from "./AppPlacemark";
+import React from "react";
+import { YMaps, Map } from "@pbe/react-yandex-maps";
+import AppPlacemark from "./AppPlacemark";
 
 export type MapPoint = {
     coordinates: number[],
