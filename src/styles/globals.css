@@ -105,3 +105,7 @@ a {
     color-scheme: dark;
   }
 }
+.AppMap{
+  width: 600px;
+  align-items: center;
+}
