@@ -10,7 +10,7 @@ export default function handler(
   res: NextApiResponse<GetPointsRes>
 ) {
   try{
-    const buf = fs.readFileSync('public/data.json');
+    const buf = fs.readFileSync('../data.json');
     const fileContent = buf.toString('utf8');
     const resObj: GetPointsRes = JSON.parse(fileContent)
     res.status(200).send(resObj);

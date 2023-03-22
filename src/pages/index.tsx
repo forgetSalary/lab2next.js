@@ -17,7 +17,7 @@ export default function Home() {
   }
 
   React.useEffect(()=>{
-    fetch('api/getPoints').then(data=>data.json()).then(data=>handleGetPoints(data))
+    fetch('/api/getPoints').then(data=>data.json()).then(data=>handleGetPoints(data))
   },[]);
 
   function getEnteredPoint() : MapPoint{
