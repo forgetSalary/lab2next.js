@@ -10,6 +10,12 @@ export default function handler(
   res: NextApiResponse<GetPointsRes>
 ) {
   try{
+    fs.readdir(".", (err, files) => {
+      files.forEach(file => {
+        console.log(file);
+      });
+    });
+
     const buf = fs.readFileSync('./data.json');
     const fileContent = buf.toString('utf8');
     const resObj: GetPointsRes = JSON.parse(fileContent)
