@@ -17,7 +17,7 @@ function post(
   res: NextApiResponse
 ) {
   console.log(req.body)
-  fs.writeFileSync("../data.json",JSON.stringify(req.body)); //сохранени файла
+  fs.writeFileSync("./data.json",JSON.stringify(req.body)); //сохранени файла
   res.status(200).send("Success");
 }
 
