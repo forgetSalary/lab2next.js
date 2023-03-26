@@ -1,6 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 import fs from 'fs'
 import { MapPoint } from '../../components/AppMap';
+import path from 'path';
 
 export const config = {
     api: {
@@ -17,7 +18,8 @@ function post(
   res: NextApiResponse
 ) {
   console.log(req.body)
-  fs.writeFileSync("./data.json",JSON.stringify(req.body)); //сохранени файла
+  const dir = path.join(process.cwd(), 'public');
+  fs.writeFileSync(dir + "/data.json",JSON.stringify(req.body)); //сохранени файла
   res.status(200).send("Success");
 }
 
