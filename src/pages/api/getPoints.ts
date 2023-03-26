@@ -1,5 +1,6 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from 'next'
+import directoryTree from "directory-tree";
 import fs from 'fs'
 import { MapPoint } from '../../components/AppMap';
 
@@ -10,11 +11,8 @@ export default function handler(
   res: NextApiResponse<GetPointsRes>
 ) {
   try{
-    fs.readdir(".", (err, files) => {
-      files.forEach(file => {
-        console.log(file);
-      });
-    });
+    const tree = directoryTree("./src", {attributes:["type", "extension"]});
+    console.log(JSON.stringify(tree, null, " "));
 
     const buf = fs.readFileSync('./data.json');
     const fileContent = buf.toString('utf8');
