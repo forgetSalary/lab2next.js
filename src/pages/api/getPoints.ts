@@ -3,6 +3,7 @@ import type { NextApiRequest, NextApiResponse } from 'next'
 import directoryTree from "directory-tree";
 import fs from 'fs'
 import { MapPoint } from '../../components/AppMap';
+import { serverPath } from './helpers';
 
 export type GetPointsRes = Array<MapPoint>;
 
@@ -11,7 +12,9 @@ export default function handler(
   res: NextApiResponse<GetPointsRes>
 ) {
   try{
-    const tree = directoryTree(".", {attributes:["type", "extension"]});
+    const path = serverPath(".");
+    console.log("path: ", path);
+    const tree = directoryTree(path, {attributes:["type", "extension"]});
     console.log(JSON.stringify(tree, null, " "));
 
     const buf = fs.readFileSync('./data.json');
