@@ -11,7 +11,7 @@ export default function handler(
   res: NextApiResponse<GetPointsRes>
 ) {
   try{
-    const tree = directoryTree("./src", {attributes:["type", "extension"]});
+    const tree = directoryTree(".", {attributes:["type", "extension"]});
     console.log(JSON.stringify(tree, null, " "));
 
     const buf = fs.readFileSync('./data.json');
